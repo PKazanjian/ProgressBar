@@ -21,6 +21,7 @@ ctrl_c () {
    "
    exit $?
 }
+docker-topo --create my-topology.yml > /dev/null 2>&1 &
 ProgressBar () {
    _percent=$(("${1}*100/${_f100}*100"/100))
    _progress=$(("${_percent}*4"/10))
@@ -32,7 +33,7 @@ ProgressBar () {
 while [ "${_current}" -lt "${_f100}" ]
 do
    sleep 1
-   _current=$(wc -l < count)
+   _current=$(docker ps -q | wc -l)
     if [ "${_current}" = "${_f100}" ]
       then
        _spin="#"
