@@ -13,14 +13,11 @@ echo "
 "
 tput civis
 stty -echo
-trap ctrl_c INT
-ctrl_c () {
+CleanUp () {
    tput cnorm
    stty echo
-   echo "
-   "
-   exit $?
 }
+trap CleanUp EXIT
 docker-topo --create my-topology.yml > /dev/null 2>&1 &
 ProgressBar () {
    _percent=$(("${1}*100/${_f100}*100"/100))
@@ -43,11 +40,9 @@ do
     fi
       ProgressBar "${_current}"
 done
-stty echo
-tput cnorm
 echo "
 "
 printf '\e[0;32m%-6s\e[m' "$(tput bold)Containers are Ready!!"
 echo "
 "
-exit $?
+# EOF
