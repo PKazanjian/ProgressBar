@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Philip J. Kazanjian * Boston MA * 07/31/2020 *
+# Author: Philip J. Kazanjian * Boston MA * 08/21/2020 *
 # Src: * http://thekettlemaker.com/progressbar.html * https://github.com/PKazanjian/progressbar *
 # Desc: Displays the progress of 22 containers starting and when 17 APIs are ready
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
@@ -32,6 +32,15 @@ ProgressBar () {
 }
 while [ "${_current}" -lt "${_f100}" ]
 do
+  if [ "${_current}" -lt "$y" ]; then
+      if [ "$k" -lt "$z" ]; then
+        k=$((k+1))
+      fi
+      if [ "$k" = "$z" ]; then
+        _containers=$(docker ps -q | wc -l)
+        k=$((k=0))
+      fi
+   fi
    if [ "${_current}" -ge "$y" ]; then
       if [ "$j" = "$x" ]; then
         ansible -m eos_command -a "commands='show lldp neighbors' provider='{{ eos_connection }}'" all | grep -ic success >> /tmp/count &
@@ -42,15 +51,6 @@ do
         _apis=$(tail -n 1 /tmp/count)
       fi
    fi
-   if [ "${_current}" -lt "$y" ]; then
-      if [ "$k" -lt "$z" ]; then
-        k=$((k+1))
-      fi
-      if [ "$k" = "$z" ]; then
-        _containers=$(docker ps -q | wc -l)
-        k=$((k=0))
-      fi
-    fi
      sleep 0.75
      _current=$((_containers + _apis))
     if [ "${_current}" = "${_f100}" ]; then
