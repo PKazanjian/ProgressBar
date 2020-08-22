@@ -1,6 +1,7 @@
 #!/bin/bash
 # Author: Philip J. Kazanjian * Boston MA * 07/31/2020 *
 # Src: * http://thekettlemaker.com/progressbar.html * https://github.com/PKazanjian/progressbar *
+# Desc: Displays the progress of 15 containers starting
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
 #
 _f100=15
