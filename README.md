@@ -16,3 +16,4 @@ If you wish to measure the progress of different APIs, then change these four it
 This video will walk you thru it!
 https://www.youtube.com/watch?v=VxmL_6eX7Pw
 
+## Example: "tar.sh" displays the progress of extracting a zip file
