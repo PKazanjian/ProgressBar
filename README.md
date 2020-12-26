@@ -18,6 +18,12 @@ https://www.youtube.com/watch?v=VxmL_6eX7Pw
 
 ## Example: "tar.sh" displays the progress of extracting a zip file
 This is just a test file. It measures the extraction progress of a specific tar file.  
+To use this with your file:
+1. Replace your tar file with the one specified on line 20
+2. Replace the extracted file's disk usage in MB on line 7 "_f100"
+3. Replace the estimated time values on line 23. For me it was "4" seconds. This was determined using time (See below YouTube video)
+4. Run the script as "root" user
+
 To do's (Allow the script to be used to with any zip file):
 1. Automate file by passing as argument to script
 2. Automate determining extracted "Disk Usage".. maybe using gzip or unzip
