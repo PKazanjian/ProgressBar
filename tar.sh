@@ -17,11 +17,12 @@ CleanUp () {
    stty echo
 }
 trap CleanUp EXIT
-sudo tar -zxf hadoop-2.7.3.tar.gz > /dev/null 2>&1 &
+tar -zxf hadoop-2.7.3.tar.gz > /dev/null 2>&1 &
 ProgressBar () {
     _percent=$(("${1}*100/${_f100}*100"/100))
-    _eta="ETA $((8-"${_percent}*8/100"))s"
-    _elapsed=$(ps -p $! -o etime --no-headers)
+    _eta="ETA $((4-"${_percent}*4/100"))s"
+    _pid=$(pgrep tar)
+    _elapsed=$(ps -p "${_pid}" -o etime --no-headers 2>/dev/null)
     _progress=$(("${_percent}*4"/10))
     _remainder=$((40-_progress))
     _completed=$(printf "%${_progress}s")
@@ -31,7 +32,7 @@ ProgressBar () {
 while [ "${_current}" -lt "${_f100}" ]
 do
     sleep 0.2
-    _current=$(sudo du -sh hadoop-2.7.3 | sed "s/M.*//")
+    _current=$(du -sh hadoop-2.7.3 | sed "s/M.*//")
     if [ "${_elapsed}" ]
      then
       _last="$_elapsed"
