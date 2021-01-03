@@ -4,6 +4,8 @@
 # Desc: A progressbar used to track the progress of extracting a specific zip file 
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
 #
+# 205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
+#
 _f100=336 _current=0 _elapsed="00:00" _sec=0 _holder="ETA"
 _mib=$(du -sh hadoop-2.7.3.tar.gz | sed "s/M.*//")
 echo ""
@@ -29,7 +31,7 @@ ProgressBar () {
     _remainder=$((40-_progress))
     _completed=$(printf "%${_progress}s")
     _left=$(printf "%${_remainder}s")
-    printf "\r${_mib}MiB ${_mbs}MiB/s ${3} [${_completed// /=}>${_left// / }] ${_percent}%% ${_holder}${_eta} "
+    printf "\r${_mib}MiB ${_mbs}MiB/s ${3} [${_completed// /=}>${_left// / }] ${_percent}%% ${_holder} ${_eta} "
 }
 while [ "${_current}" -lt "${_f100}" ]; do
     sleep 1
