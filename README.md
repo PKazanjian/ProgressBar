@@ -29,10 +29,10 @@ user@host$ sudo ./tar.sh
 205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
   
 To use this with your file:
-1. Replace your tar file with the one specified on line 20
-2. Replace the extracted file's disk usage in MB on line 7 "_f100"
-3. Replace the estimated time values on line 23. For me it was "4" seconds. This was determined using time (See below YouTube video)
-4. Run the script as "root"
+1. Replace your the extracted file size "MB" with yours on line 8 "_f100"
+2. Replace the tar file on lines 9 and 21
+3. Replace the extracted directory name on line 38 
+3. Run the script as "root"
 
 ## Example: "atar.sh" displays the progress of extracting any tar file
 
