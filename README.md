@@ -22,7 +22,9 @@ If you wish to measure the progress of different APIs, then change these four it
 This video will walk you thru it!
 https://www.youtube.com/watch?v=VxmL_6eX7Pw
 
-## Example: "tar.sh" displays the progress of extracting a specific zip file
+## Example: "tar.sh" displays the progress of extracting a specific tar file
+
+user@host$ sudo ./tar.sh
 
 205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
   
@@ -32,9 +34,12 @@ To use this with your file:
 3. Replace the estimated time values on line 23. For me it was "4" seconds. This was determined using time (See below YouTube video)
 4. Run the script as "root"
 
-To do's (Allow the script to be used to with any zip file):
-1. Automate file by passing as argument to script
-2. Automate determining extracted "Disk Usage".. maybe using gzip or unzip
-3. Automate ETA
+## Example: "atar.sh" displays the progress of extracting any tar file
 
-YouTube video will follow shortly : )
+user@host$ sudo ./atar.sh your.tar.gz
+
+205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
+
+1. Pass your tar as an argument to the script!
+
+YouTube videos will follow shortly for the tar examples : )
