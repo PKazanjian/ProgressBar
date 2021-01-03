@@ -41,8 +41,8 @@ while [ "${_current}" -lt "${_f100}" ]; do
     fi
      if [[ "${_sec}" -gt 1 && "${_eta}" != 0 ]]; then
       _eta=$((_eta-1))
-      _last=${_elapsed}
     fi
+    _last=${_elapsed}
     ProgressBar "${_current}" "${_sec}" "${_elapsed//[[:blank:]]/}" "${_eta}" "${_holder}"
 done
 _eta=" " _holder="   "
