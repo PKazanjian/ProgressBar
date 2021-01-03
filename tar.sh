@@ -3,6 +3,7 @@
 # Src: * http://thekettlemaker.com/progressbar.html * https://github.com/PKazanjian/progressbar *
 # Desc: A progressbar used to track the progress of extracting a specific zip file 
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
+#
 #      205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
 #
 _f100=336 _current=0 _elapsed="00:00" _holder="ETA"
