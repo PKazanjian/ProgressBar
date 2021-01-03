@@ -1,7 +1,7 @@
 #!/bin/bash
 # Author: Philip J. Kazanjian * Boston MA * 12/26/2020 *
 # Src: * http://thekettlemaker.com/progressbar.html * https://github.com/PKazanjian/progressbar *
-# Desc: A progressbar used to track the progress of extracting a zip file 
+# Desc: A progressbar used to track the progress of extracting a specific zip file 
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
 #
 _f100=336 _current=0 _elapsed="00:00" _sec=0 _holder="ETA"
