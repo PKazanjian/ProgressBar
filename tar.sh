@@ -5,7 +5,7 @@
 # Ack: ProgressBar function, fork of Teddy Skarin * https://github.com/fearside/ProgressBar/ *
 #      205MiB 84MiB/s 00:02 [========================================>] 100% ETA 2
 #
-_f100=336 _current=0 _elapsed="00:00" _sec=0 _holder="ETA"
+_f100=336 _current=0 _elapsed="00:00" _holder="ETA"
 _mib=$(du -sh hadoop-2.7.3.tar.gz | sed "s/M.*//")
 echo ""
 printf '\e[1;34m%-6s\e[m' "Extracting File..."
