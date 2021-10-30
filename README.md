@@ -1,7 +1,7 @@
 # BASH progressbars for processes and APIs
 ## Example: "processes.sh" displays the progress of 15 containers starting
 
-Progress: [########################################] 100%
+![alt text](<./ProgressBar.PNG>)
 
 If you wish to measure the progress of your containers just edit these two items:
 1. Change the \_f100 variable on line 6 to number of your total containers produced by your command or commands (see line 21)
